@@ -1,4 +1,4 @@
-package com.example.SmartPath.entity;
+package com.example.SmartPath.entity.base;
 
 import com.example.SmartPath.entity.enums.UserRole;
 import com.example.SmartPath.entity.base.BaseEntity;
@@ -30,8 +30,6 @@ public class Person extends BaseEntity<Long> implements UserDetails {
     String password;
     @Enumerated(EnumType.STRING)
     UserRole userRole;
-    @ManyToMany(mappedBy = "personList",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
-    List<Course> courseList=new ArrayList<>();
 
     boolean isEnabled;
 
