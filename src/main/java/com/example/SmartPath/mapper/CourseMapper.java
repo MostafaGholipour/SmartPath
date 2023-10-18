@@ -7,9 +7,7 @@ import com.example.SmartPath.entity.Course;
 
 public class CourseMapper {
     public Course convert(CourseDto courseDto) {
-        Course course = new Course();
-        course.setName(courseDto.getName());
-        course.setSpan(courseDto.getSpan());
+        Course course = new Course(courseDto.getName(),courseDto.getSpan());
         return course;
     }
 

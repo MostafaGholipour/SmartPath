@@ -10,17 +10,23 @@ import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Setter
 @Getter
 @NoArgsConstructor
 @Entity
-@Table(name = "orders")
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Course extends BaseEntity<Long> {
     String name;
     int span;
     @ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
-    List<Person> personList=new ArrayList<>();
+    Set<Person> personList=new HashSet<>();
+
+    public Course(String name, int span) {
+        this.name = name;
+        this.span = span;
+    }
 }
