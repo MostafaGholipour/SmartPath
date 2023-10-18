@@ -8,11 +8,13 @@ import com.example.SmartPath.service.CourseService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 @RequiredArgsConstructor
 public class CourseServiceImpl implements CourseService {
     private final CourseRepository repository;
-    private final CourseMapper courseMapper;
+     CourseMapper courseMapper=new CourseMapper();
 
     @Override
     public void save(CourseDto courseDto) {
@@ -28,5 +30,15 @@ public class CourseServiceImpl implements CourseService {
     @Override
     public void deleteByName(String s) {
         repository.deleteByName(s);
+    }
+
+    @Override
+    public void deleteById(Long id) {
+        repository.deleteById(id);
+    }
+
+    @Override
+    public Optional<Course> findByName(String name) {
+        return repository.findByName(name);
     }
 }
