@@ -13,11 +13,10 @@ public class CollegianMapper {
         return dto;
     }
     public Collegian convert(CollegianDto collegianDto){
-        Collegian collegian=new Collegian();
-        collegian.setFirstName(collegianDto.getFirstName());
-        collegian.setLastName(collegianDto.getLastName());
-        collegian.setUsername(collegianDto.getUsername());
-        collegian.setPassword(collegianDto.getPassword());
+        Collegian collegian=new Collegian(collegianDto.getFirstName(),
+                collegianDto.getFirstName(),collegianDto.getUsername(),
+                collegianDto.getPassword());
+
         return collegian;
     }
 
