@@ -1,4 +1,4 @@
-package com.example.SmartPath.base;
+package com.example.SmartPath.entity.base;
 
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;

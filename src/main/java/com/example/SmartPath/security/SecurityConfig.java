@@ -28,7 +28,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/register/**").permitAll()
                         .requestMatchers("/manager/**").hasAuthority("MANAGER")
-                        .requestMatchers("/customer/**").hasAuthority("CUSTOMER")
+                        .requestMatchers("/collegian/**").hasAuthority("COLLEGIAN")
                         .anyRequest().authenticated()
                 ).httpBasic(httpSecurityHttpBasicConfigurer ->{})
                 .authenticationProvider(new Provider((CustomDetailsService) userDetailsService(),passwordEncoder()));

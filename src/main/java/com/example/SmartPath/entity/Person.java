@@ -1,6 +1,7 @@
-package com.example.SmartPath.base;
+package com.example.SmartPath.entity;
 
 import com.example.SmartPath.entity.enums.UserRole;
+import com.example.SmartPath.entity.base.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -8,8 +9,10 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 
 @Setter
 @Getter
@@ -27,18 +30,18 @@ public class Person extends BaseEntity<Long> implements UserDetails {
     String password;
     @Enumerated(EnumType.STRING)
     UserRole userRole;
-    String email;
+    @ManyToMany(mappedBy = "personList",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+    List<Course> courseList=new ArrayList<>();
 
     boolean isEnabled;
 
     public Person(String firstName, String lastName, String username
-            , String password, UserRole userRole, String email) {
+            , String password, UserRole userRole) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.username = username;
         this.password = password;
         this.userRole = userRole;
-        this.email = email;
     }
 
     @Override
