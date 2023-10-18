@@ -12,7 +12,6 @@ import lombok.experimental.FieldDefaults;
 @ToString
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @NoArgsConstructor
-@AllArgsConstructor
 public class Manager extends Person {
     public Manager(String firstName, String lastName
             , String username, String password) {
