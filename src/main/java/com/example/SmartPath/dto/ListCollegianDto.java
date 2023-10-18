@@ -1,7 +1,13 @@
 package com.example.SmartPath.dto;
 
-import java.util.List;
+import lombok.*;
 
+import java.util.List;
+@Setter
+@Getter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class ListCollegianDto {
     List<CollegianDto> list;
 }
