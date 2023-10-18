@@ -1,6 +1,6 @@
 package com.example.SmartPath.security;
 
-import com.example.SmartPath.entity.Person;
+import com.example.SmartPath.entity.base.Person;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;

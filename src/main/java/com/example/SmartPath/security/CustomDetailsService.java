@@ -1,6 +1,6 @@
 package com.example.SmartPath.security;
 
-import com.example.SmartPath.entity.Person;
+import com.example.SmartPath.entity.base.Person;
 import com.example.SmartPath.exception.NotFoundException;
 import com.example.SmartPath.repository.PersonRepository;
 import lombok.RequiredArgsConstructor;
