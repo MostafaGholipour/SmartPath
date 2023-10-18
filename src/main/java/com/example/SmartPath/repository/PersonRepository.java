@@ -1,6 +1,6 @@
 package com.example.SmartPath.repository;
 
-import com.example.SmartPath.base.Person;
+import com.example.SmartPath.entity.base.Person;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

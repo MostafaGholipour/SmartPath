@@ -30,7 +30,7 @@ public class Person extends BaseEntity<Long> implements UserDetails {
     String password;
     @Enumerated(EnumType.STRING)
     UserRole userRole;
-
+//    String email;
     boolean isEnabled;
 
     public Person(String firstName, String lastName, String username
