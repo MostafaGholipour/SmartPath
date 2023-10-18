@@ -2,15 +2,15 @@ package com.example.SmartPath.entity;
 
 import com.example.SmartPath.entity.base.Person;
 import com.example.SmartPath.entity.enums.UserRole;
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.ManyToMany;
+import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+
 @Setter
 @Getter
 @Entity
@@ -20,10 +20,10 @@ import java.util.List;
 @AllArgsConstructor
 public class Collegian extends Person {
     @ManyToMany(mappedBy = "personList",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
-    List<Course> courseList=new ArrayList<>();
+    Set<Course> courseList=new HashSet<>();
 
     public Collegian(String firstName, String lastName,
                      String username, String password) {
-        super(firstName, lastName, username, password, UserRole.COLLEGIAN, false);
+        super(firstName, lastName, username, password, UserRole.COLLEGIAN, true);
     }
 }
