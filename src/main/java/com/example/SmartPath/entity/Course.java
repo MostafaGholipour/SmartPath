@@ -1,6 +1,7 @@
 package com.example.SmartPath.entity;
 
 import com.example.SmartPath.entity.base.BaseEntity;
+import com.example.SmartPath.entity.base.Person;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
